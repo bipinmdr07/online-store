@@ -11,12 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require uikit
-//= require uikit-components
 //= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
 //= require react
 //= require react_ujs
 //= require components
+//= require semantic-ui
 //= require_tree .

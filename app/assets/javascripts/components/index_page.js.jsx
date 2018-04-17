@@ -8,9 +8,7 @@ class IndexPage extends React.Component {
 
   render(){
     return (
-      <div>
-        <Products products={this.state.products} />
-      </div>
+      <Products products={this.state.products} />
     )
   }
 }

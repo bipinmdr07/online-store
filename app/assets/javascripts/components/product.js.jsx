@@ -11,11 +11,11 @@
 // }
 
 const Product = ({product}) =>
-	<div>
-		<ul>
-			<li>{product.name}</li>
-			<li>{product.description}</li>
-			<li>{product.quantity}</li>
-			<li>{product.price}</li>
-		</ul>
+	<div className="ui red card">
+		<div className="content">
+			<div className="right floated ui teal tag label">{product.quantity} available</div>
+			<h3>{product.name}</h3>
+			<p>{product.description}</p>
+			<div>NRs: {product.price}</div>
+		</div>
 	</div>

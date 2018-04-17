@@ -14,7 +14,7 @@
 // }
 
 const Products = ({products}) =>
-  <div>
+  <div className="ui four cards">
     {products.map((product) =>
       < Product product={product} key={product.id} />
     )}

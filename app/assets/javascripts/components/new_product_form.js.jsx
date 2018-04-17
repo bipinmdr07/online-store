@@ -30,66 +30,117 @@ class NewProductForm extends React.Component{
 
 	handleSubmit(){
 		const product = {name: this.state.name, description: this.state.description, quantity: this.state.quantity, price: this.state.price}
-		$.post('/products', {product: product}).done()
+		$.post('/products', {product: product}).done((data) =>
+			console.log(data)
+		)
 	}
 
   render() {
-    return (
-	  	<div className="uk-panel uk-panel-box-primary uk-width-1-3 align_c">
-				<div className="uk-container">
-					<form className="uk-form-stacked" onSubmit = {() => this.handleSubmit()}>
-						<div className="uk-margin">
-							<label className="uk-form-label">Name</label>
-							<div className="uk-form-controls">
-								<input type='text'
-								className="uk-input uk-width-1-1"
-								onChange={(e) => this.textChangeHandler(e, "name")}
-								placeholder="Name of Product"
-								value={this.state.name}/>
+
+		return(
+			<div className="ui black card">
+				<div className="content">
+					<span className="header">Add New Product</span>
+					<hr />
+					<form className="ui form" onSubmit={() => this.handleSubmit()} >
+						<div className="field">
+							<label>Name</label>
+							<div className="field">
+								<input type="text"
+								onChange={(e) => this.textChangeHandler(e, 'name')}
+								placeholder="Name of the Product"
+								value={this.state.name} />
 							</div>
 						</div>
 
-						<div className="uk-margin">
-							<label className="uk-form-label">Description</label>
-							<div className="uk-form-controls">
+						<div className="field">
+							<label>Description</label>
+							<div className="field">
 								<textarea
-								className="uk-textarea uk-width-1-1"
-								onChange={(e) => this.textChangeHandler(e, "description")}
-								placeholder="Description of the product"
-								value={this.state.description}/>
+									onChange={(e) => this.textChangeHandler(e, 'description')}
+									placeholder="Description of the Product"
+									value={this.state.description}
+								 />
 							</div>
 						</div>
 
-						<div className="uk-margin">
-							<label className="uk-form-label">Quantity</label>
-							<div className="uk-form-controls">
-								<input type='number'
-								className="uk-input uk-width-1-1"
-								onChange={(e) => this.textChangeHandler(e, "quantity")}
-								placeholder="Quantity of product available in integer"
-								value={this.state.quantity}/>
+						<div className="field">
+							<label>Quantity</label>
+							<div className="field">
+								<input type="number"
+								onChange={(e) => this.textChangeHandler(e, 'quantity')}
+								placeholder="Quantity of product available for sale"
+								value={this.state.quantity} />
 							</div>
 						</div>
 
-						<div className="uk-margin">
-							<label className="uk-form-label">Price</label>
-							<div className="uk-form-controls">
-								<input type='number'
-								className="uk-input uk-width-1-1"
-								onChange={(e) => this.textChangeHandler(e, "price")}
-								placeholder="Price of the product"
-								value={this.state.price}/>
+						<div className="field">
+							<label>Price</label>
+							<div className="field">
+								<input type="number"
+								onChange={(e) => this.textChangeHandler(e, 'price')}
+								placeholder="Price of unit product"
+								value={this.state.price} />
 							</div>
 						</div>
 
-						<div className="uk-margin">
-							<div className="uk-form-controls">
-								<input type="submit" className="uk-button-primary" value="Add New Product" />
-							</div>
-						</div>
+						<input className="ui button primary" type='submit' value="Add This Product" />
 					</form>
 				</div>
 			</div>
-    )
+		)
+    // return (
+	  // 	<div>
+		// 		<div>
+		// 			<form className="ui form" onSubmit = {() => this.handleSubmit()}>
+		// 				<div>
+		// 					<label>Name</label>
+		// 					<div className="ui input">
+		// 						<input type='text'
+		// 						onChange={(e) => this.textChangeHandler(e, "name")}
+		// 						placeholder="Name of Product"
+		// 						value={this.state.name}/>
+		// 					</div>
+		// 				</div>
+		//
+		// 				<div>
+		// 					<label>Description</label>
+		// 					<div className="ui input">
+		// 						<textarea
+		// 						onChange={(e) => this.textChangeHandler(e, "description")}
+		// 						placeholder="Description of the product"
+		// 						value={this.state.description}/>
+		// 					</div>
+		// 				</div>
+		//
+		// 				<div>
+		// 					<label>Quantity</label>
+		// 					<div className="ui input">
+		// 						<input type='number'
+		// 						onChange={(e) => this.textChangeHandler(e, "quantity")}
+		// 						placeholder="Quantity of product available in integer"
+		// 						value={this.state.quantity}/>
+		// 					</div>
+		// 				</div>
+		//
+		// 				<div>
+		// 					<label>Price</label>
+		// 					<div className="ui input">
+		// 						<input type='number'
+		// 						onChange={(e) => this.textChangeHandler(e, "price")}
+		// 						placeholder="Price of the product"
+		// 						value={this.state.price}/>
+		// 					</div>
+		// 				</div>
+		//
+		// 				<div>
+		// 					<div>
+		// 						<input type="submit" value="Add New Product" />
+		// 					</div>
+		// 				</div>
+		// 			</form>
+		// 		</div>
+		// 	</div>
+    // )
   }
 }
