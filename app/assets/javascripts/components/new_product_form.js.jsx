@@ -30,8 +30,8 @@ class NewProductForm extends React.Component{
 
 	handleSubmit(){
 		const product = {name: this.state.name, description: this.state.description, quantity: this.state.quantity, price: this.state.price}
-		$.post('/products', {product: product}).done((data) =>
-			console.log(data)
+		$.post('/api/v1/products', {product: product}).done((data) =>
+			{window.location = '/'}
 		)
 	}
 
@@ -89,58 +89,5 @@ class NewProductForm extends React.Component{
 				</div>
 			</div>
 		)
-    // return (
-	  // 	<div>
-		// 		<div>
-		// 			<form className="ui form" onSubmit = {() => this.handleSubmit()}>
-		// 				<div>
-		// 					<label>Name</label>
-		// 					<div className="ui input">
-		// 						<input type='text'
-		// 						onChange={(e) => this.textChangeHandler(e, "name")}
-		// 						placeholder="Name of Product"
-		// 						value={this.state.name}/>
-		// 					</div>
-		// 				</div>
-		//
-		// 				<div>
-		// 					<label>Description</label>
-		// 					<div className="ui input">
-		// 						<textarea
-		// 						onChange={(e) => this.textChangeHandler(e, "description")}
-		// 						placeholder="Description of the product"
-		// 						value={this.state.description}/>
-		// 					</div>
-		// 				</div>
-		//
-		// 				<div>
-		// 					<label>Quantity</label>
-		// 					<div className="ui input">
-		// 						<input type='number'
-		// 						onChange={(e) => this.textChangeHandler(e, "quantity")}
-		// 						placeholder="Quantity of product available in integer"
-		// 						value={this.state.quantity}/>
-		// 					</div>
-		// 				</div>
-		//
-		// 				<div>
-		// 					<label>Price</label>
-		// 					<div className="ui input">
-		// 						<input type='number'
-		// 						onChange={(e) => this.textChangeHandler(e, "price")}
-		// 						placeholder="Price of the product"
-		// 						value={this.state.price}/>
-		// 					</div>
-		// 				</div>
-		//
-		// 				<div>
-		// 					<div>
-		// 						<input type="submit" value="Add New Product" />
-		// 					</div>
-		// 				</div>
-		// 			</form>
-		// 		</div>
-		// 	</div>
-    // )
   }
 }

@@ -6,9 +6,16 @@ class IndexPage extends React.Component {
     }
   }
 
+  handleAddButtonClick() {
+    window.location = '/products/new'
+  }
+
   render(){
     return (
-      <Products products={this.state.products} />
+      <div>
+        <input type="submit" onClick={() => this.handleAddButtonClick()} value="Add New Product" />
+        <Products products={this.state.products} />
+      </div>
     )
   }
 }
