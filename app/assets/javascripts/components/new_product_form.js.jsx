@@ -38,11 +38,11 @@ class NewProductForm extends React.Component{
   render() {
 
 		return(
-			<div className="ui black card">
+			<div className="ui black card large fluid aligned center">
 				<div className="content">
 					<span className="header">Add New Product</span>
 					<hr />
-					<form className="ui form" onSubmit={() => this.handleSubmit()} >
+					<form className="ui large form" onSubmit={() => this.handleSubmit()} >
 						<div className="field">
 							<label>Name</label>
 							<div className="field">
@@ -84,7 +84,7 @@ class NewProductForm extends React.Component{
 							</div>
 						</div>
 
-						<input className="ui button primary" type='submit' value="Add This Product" />
+						<input className="ui fluid button teal" type='submit' value="Add This Product" />
 					</form>
 				</div>
 			</div>
